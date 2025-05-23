@@ -1,0 +1,33 @@
+/* Custom CSS for Certifications Section */
+#certifications .features article {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#certifications .features article > span {
+    font-size: 2.5em;
+    min-width: 60px;
+    text-align: center;
+    color: #f56a6a; /* Using the theme's accent color */
+}
+
+#certifications .features article .content {
+    flex-grow: 1;
+}
+
+#certifications .features article .content h3 {
+    margin-top: 0;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 736px) {
+    #certifications .features article {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #certifications .features article > span {
+        margin-bottom: 0.5em;
+    }
+}
