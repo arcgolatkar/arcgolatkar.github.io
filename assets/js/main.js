@@ -259,4 +259,74 @@
 
 			});
 
+	// Modal Functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		// Get all elements with class="open-modal-button"
+		var openModalButtons = document.querySelectorAll('.open-modal-button');
+
+		// Get all elements with class="modal-close-button"
+		var closeModalButtons = document.querySelectorAll('.modal-close-button');
+
+		// Function to open a modal
+		function openModal(modalId) {
+			var modal = document.getElementById(modalId.substring(1)); // Remove '#' from ID
+			if (modal) {
+				modal.style.display = "block";
+				document.body.style.overflow = 'hidden'; // Prevent background scrolling
+			}
+		}
+
+		// Function to close a modal
+		function closeModal(modalId) {
+			var modal = document.getElementById(modalId);
+			if (modal) {
+				modal.style.display = "none";
+				document.body.style.overflow = 'auto'; // Restore background scrolling
+			}
+		}
+
+		// Add click event listeners to all open modal buttons
+		openModalButtons.forEach(function(button) {
+			button.addEventListener('click', function(event) {
+				event.preventDefault(); // Prevent default link behavior
+				var modalTargetId = this.getAttribute('data-modal-target');
+				if (modalTargetId) {
+					openModal(modalTargetId);
+				}
+			});
+		});
+
+		// Add click event listeners to all close modal buttons
+		closeModalButtons.forEach(function(button) {
+			button.addEventListener('click', function() {
+				var modalIdToClose = this.getAttribute('data-modal-id');
+				if (modalIdToClose) {
+					closeModal(modalIdToClose);
+				}
+			});
+		});
+
+		// When the user clicks anywhere outside of a modal, close it
+		window.addEventListener('click', function(event) {
+			document.querySelectorAll('.modal').forEach(function(modal) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+					document.body.style.overflow = 'auto'; // Restore background scrolling
+				}
+			});
+		});
+
+		// Optional: Close modal with Esc key
+		document.addEventListener('keydown', function(event) {
+			if (event.key === "Escape") {
+				document.querySelectorAll('.modal').forEach(function(modal) {
+					if (modal.style.display === "block") {
+						modal.style.display = "none";
+						document.body.style.overflow = 'auto'; // Restore background scrolling
+					}
+				});
+			}
+		});
+	});
+
 })(jQuery);

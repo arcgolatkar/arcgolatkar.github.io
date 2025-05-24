@@ -2271,3 +2271,86 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top (higher than sidebar's default z-index if it's active) */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    padding-top: 60px; /* Location of the box */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    color: #3d4449; /* Match your theme's text color */
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 700px; /* Maximum width */
+    border-radius: 0.375em; /* Match theme's border-radius */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    position: relative;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.modal-content h2, .modal-content h3, .modal-content h4 {
+    color: #3d4449; /* Match heading color */
+    font-family: "Roboto Slab", serif;
+}
+.modal-content h2 {
+    font-size: 1.75em;
+    margin-bottom: 0.8em;
+}
+.modal-content h3 {
+    font-size: 1.25em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+.modal-content p, .modal-content ul {
+    color: #7f888f; /* Match paragraph color */
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.65;
+}
+.modal-content ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+
+.modal-close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+    color: #f56a6a; /* Accent color on hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Ensure modal content images are responsive */
+.modal-content .image.fit img,
+.modal-content .image.main img {
+    width: 100%;
+    border-radius: 0.375em;
+    margin-bottom: 1em;
+}

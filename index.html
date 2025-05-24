@@ -75,8 +75,8 @@
 											<span class="icon solid fa-brain"></span> <!-- Icon for ML/intelligence -->
 											<div class="content">
 												<h3>Machine Learning Engineer</h3>
-												<h4><em>Designing, developing, and optimizing machine learning models and algorithms to solve complex problems.</em></p>
-												<p>Skils: Python, R, Scikit-learn, XGBoost, LightGBM, Deep Learning (CNNs, RNNs, Transformers), NLP (Hugging Face, spaCy), Computer Vision (OpenCV), Model Evaluation & Tuning, Feature Engineering.</p>
+												<h4><em>Designing, developing, and optimizing machine learning models to solve complex problems.</em></h4>
+												<p>Skils: Python, XGBoost, LightGBM, Deep Learning (CNNs, RNNs, Transformers), NLP (Hugging Face, spaCy), Computer Vision (OpenCV), Model Evaluation & Tuning, Feature Engineering.</p>
 											</div>
 										</article>
 										<article>
@@ -91,7 +91,7 @@
 											<span class="icon solid fa-chart-pie"></span> <!-- Icon for analysis/visualization -->
 											<div class="content">
 												<h3>Data Analyst</h3>
-												<h4><em>Interpreting complex data sets, identifying trends, and generating actionable insights through statistical analysis and compelling visualizations to support business decisions.</em></h4>
+												<h4><em>Interpreting complex data sets and generating insights through statistical analysis and compelling visualizations to support business decisions.</em></h4>
 												<p>Skills: SQL, Python (Pandas, NumPy), R, Advanced Excel, Data Visualization (Tableau, PowerBI, Matplotlib, Seaborn), Statistical Analysis, A/B Testing, Report Generation, Data Cleaning, EDA (Exploratory Data Analysis).</p>
 											</div>
 										</article>
@@ -115,19 +115,21 @@
 									</header>
 									<div class="posts">
 										<article>
-											<a href="#" class="image"><img src="images/legislativebills.jpeg" alt="" /></a>
+											<a href="#" class="image open-modal-button" data-modal-target="#projectModal1"><img src="images/legislativebills.jpeg" alt="" /></a>
+											<!-- <a href="#" class="image"><img src="images/legislativebills.jpeg" alt="" /></a> -->
 											<h3>Legislative Bill Passability Predictor</h3>
 											<p>Used Claude API and CatBoost to extract features and predict bill passability for the 2025 legislative session with 80% accuracy.</p>
 											<ul class="actions">
-												<li><a href="#" class="button">More Details</a></li>
+												<!-- Add class "open-modal-button" and "data-modal-target" -->
+												<li><a href="#" class="button open-modal-button" data-modal-target="#projectModal1">More Details</a></li>
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/feedbacksummarization.png" alt="" /></a>
+											<a href="#" class="image open-modal-button" data-modal-target="#projectModal2"><img src="images/feedbacksummarization.png" alt="" /></a>
 											<h3>Feedback Summarization Tool</h3>
 											<p>Created an NLP tool using GPT-3.5 and Langchain to analyze, comprehend, and summarize customer feedback with advanced sentiment analysis.</p>
 											<ul class="actions">
-												<li><a href="#" class="button">More Details</a></li>
+												<li><a href="#" class="button open-modal-button" data-modal-target="#projectModal2">More Details</a></li>
 											</ul>
 										</article>
 										<article>
@@ -287,7 +289,54 @@
 						</div>
 					</div>
 
+					<!-- MODALS START HERE -->
+					<!-- Legislative Bill Passability Predictor Modal -->
+					<div id="projectModal1" class="modal">
+						<div class="modal-content">
+							<span class="modal-close-button" data-modal-id="projectModal1">×</span>
+							<h2>Legislative Bill Passability Predictor</h2>
+							<span class="image main"><img src="images/legislativebills.jpeg" alt="Legislative Bill Predictor" /></span>
+							<p>This project aimed to predict the passability of legislative bills for the upcoming 2025 session. By leveraging advanced NLP techniques with the Claude API for feature extraction from bill texts and employing a CatBoost classifier, the model achieved an 80% accuracy in predicting whether a bill would pass or fail.</p>
+							<h3>Key Features & Technologies:</h3>
+							<ul>
+								<li><strong>AI/NLP:</strong> Claude API for semantic feature extraction from legislative texts.</li>
+								<li><strong>Machine Learning:</strong> CatBoost for classification, chosen for its robustness with categorical features and good performance.</li>
+								<li><strong>Data Processing:</strong> Python (Pandas, NumPy) for data cleaning and preparation.</li>
+								<li><strong>Evaluation:</strong> Rigorous model evaluation metrics (Accuracy, Precision, Recall, F1-score).</li>
+							</ul>
+							<h3>Challenges:</h3>
+							<p>One major challenge was handling the diverse and often nuanced language of legislative documents. Fine-tuning the prompts for the Claude API was crucial for extracting meaningful and predictive features.</p>
+							<h3>Outcome:</h3>
+							<p>The model provides a valuable tool for lobbyists, policymakers, and analysts to forecast legislative outcomes with a high degree of accuracy, allowing for more strategic planning and resource allocation.</p>
+							<!-- Optional: Link to GitHub or live demo if available
+							<ul class="actions" style="margin-top: 20px;">
+								<li><a href="#" class="button primary small">View on GitHub</a></li>
+							</ul>
+							-->
+						</div>
+					</div>
+
+					<!-- Feedback Summarization Tool Modal -->
+					<div id="projectModal2" class="modal">
+						<div class="modal-content">
+							<span class="modal-close-button" data-modal-id="projectModal2">×</span>
+							<h2>Feedback Summarization Tool</h2>
+							<span class="image main"><img src="images/feedbacksummarization.png" alt="Feedback Summarization Tool" /></span>
+							<p>Developed an NLP-powered tool to automate the analysis and summarization of large volumes of customer feedback. This tool utilizes GPT-3.5 via OpenAI's API and the Langchain framework to perform sentiment analysis, topic modeling, and generate concise summaries.</p>
+							<h3>Key Features & Technologies:</h3>
+							<ul>
+								<li><strong>LLM:</strong> GPT-3.5 (OpenAI API) for text understanding, summarization, and sentiment analysis.</li>
+								<li><strong>Framework:</strong> Langchain for orchestrating LLM interactions and building the application logic.</li>
+								<li><strong>NLP Techniques:</strong> Sentiment analysis, topic extraction, text summarization.</li>
+								<li><strong>Deployment (Conceptual):</strong> Designed with potential deployment via a web interface (e.g., Streamlit or Flask) in mind.</li>
+							</ul>
+							<h3>Impact:</h3>
+							<p>This tool significantly reduces the manual effort required to process customer feedback, enabling businesses to quickly identify key issues, understand customer sentiment, and respond more effectively to customer needs.</p>
+						</div>
+					</div>
+
 			</div>
+			
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

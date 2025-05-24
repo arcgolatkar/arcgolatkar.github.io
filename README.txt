@@ -2,6 +2,8 @@ Test locally:
 
 python3 -m http.server 8000
 
+TODO - add project details for rest of the projects.
+
 https://www.credly.com/badges/52892eed-c894-4e30-9e02-e05199840634/linked_in_profile
 
 
