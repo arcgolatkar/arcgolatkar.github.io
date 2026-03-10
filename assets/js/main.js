@@ -259,4 +259,61 @@
 
 			});
 
+	// Modal Functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		var openModalButtons = document.querySelectorAll('.open-modal-button');
+		var closeModalButtons = document.querySelectorAll('.modal-close-button');
+
+		function openModal(modalId) {
+			var modal = document.getElementById(modalId.substring(1));
+			if (modal) {
+				modal.style.display = "block";
+				document.body.style.overflow = 'hidden';
+			}
+		}
+
+		function closeModal(modalId) {
+			var modal = document.getElementById(modalId);
+			if (modal) {
+				modal.style.display = "none";
+				document.body.style.overflow = 'auto';
+			}
+		}
+
+		openModalButtons.forEach(function(button) {
+			button.addEventListener('click', function(event) {
+				event.preventDefault();
+				var modalTargetId = this.getAttribute('data-modal-target');
+				if (modalTargetId) openModal(modalTargetId);
+			});
+		});
+
+		closeModalButtons.forEach(function(button) {
+			button.addEventListener('click', function() {
+				var modalIdToClose = this.getAttribute('data-modal-id');
+				if (modalIdToClose) closeModal(modalIdToClose);
+			});
+		});
+
+		window.addEventListener('click', function(event) {
+			document.querySelectorAll('.modal').forEach(function(modal) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+					document.body.style.overflow = 'auto';
+				}
+			});
+		});
+
+		document.addEventListener('keydown', function(event) {
+			if (event.key === "Escape") {
+				document.querySelectorAll('.modal').forEach(function(modal) {
+					if (modal.style.display === "block") {
+						modal.style.display = "none";
+						document.body.style.overflow = 'auto';
+					}
+				});
+			}
+		});
+	});
+
 })(jQuery);
